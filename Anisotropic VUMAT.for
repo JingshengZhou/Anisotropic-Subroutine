@@ -44,7 +44,7 @@ C     Input elastic properties
       g12    = props(5)
       g31    = props(6)
       g23    = g31
-C     Compute reciprocal Poisson¡¯s ratios to ensure symmetry
+C     Compute reciprocal PoissonÂ¡Â¯s ratios to ensure symmetry
       pr21 = pr12 * e2 / e1
       pr31 = pr13 * e3 / e1
       pr32 = pr23 * e3 / e2
@@ -137,7 +137,7 @@ C     Read value from the last increment
       ep_old      = stateOld (i,1) 
 
 C     Apply elastic predictor
-C     ¦¤¦Ò = C : ¦¤¦Å (Voigt notation)        
+C     Â¦Â¤Â¦Ã’ = C : Â¦Â¤Â¦Ã… (Voigt notation)        
       stressInc11 = c11*strainInc(i,1) + c12*strainInc(i,2) 
      1              + c13*strainInc(i,3)
       stressInc22 = c21*strainInc(i,1) + c22*strainInc(i,2) 
@@ -148,7 +148,7 @@ C     ¦¤¦Ò = C : ¦¤¦Å (Voigt notation)
       stressInc23 = c55*strainInc(i,5)
       stressInc31 = c66*strainInc(i,6)
 
-C     ¦Ò = ¦Ò + ¦¤¦Ò          
+C     Â¦Ã’ = Â¦Ã’ + Â¦Â¤Â¦Ã’          
       stress11 = stressOld(i,1) + stressInc11
       stress22 = stressOld(i,2) + stressInc22
       stress33 = stressOld(i,3) + stressInc33
@@ -616,7 +616,7 @@ C Calculate rij in Hill model
       r33 = yield2/yield_old
       r12 = one/(4.d0/3.d0-one/3.d0*(yield_old/yield2)**two)**half
       r23 = one/(4.d0/3.d0*(yield_old/yield3)**two
-     1      -one/3.d0*(yield_old/yield2)**two)**half
+     1      -one/3.d0)**half
       r13 = r23
 
 C     Compute parameters F, G, H, L, M, N
