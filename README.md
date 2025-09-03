@@ -2,7 +2,8 @@
 
 Required material:
 *DENSITY
-*DEPVAR = 2
+*DEPVAR = 4 (1 for plastic strain, 3 for stress triaxiality, 4 for Lode angle parameter)
+
 *USER MATERIAL
   props(1) = Elastic modulus of coupon at 0 degree
   props(2) = Elastic modulus of coupon at 90 degree
